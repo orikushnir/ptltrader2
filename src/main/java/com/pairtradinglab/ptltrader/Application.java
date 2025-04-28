@@ -479,8 +479,8 @@ public class Application {
 		images[2]=SWTResourceManager.getImage(Application.class, "/com/pairtradinglab/ptltrader/favicon2_48.png");
 		
 		shlPtlTrader.setImages(images);
-		shlPtlTrader.setMinimumSize(new Point(800, 480));
-		shlPtlTrader.setSize(450, 300);
+		shlPtlTrader.setMinimumSize(new Point(1200, 680));
+		shlPtlTrader.setSize(1200, 680);
 		shlPtlTrader.setText("PTL Trader");
 		shlPtlTrader.setLayout(new GridLayout(1, false));
 		

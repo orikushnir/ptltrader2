@@ -108,8 +108,8 @@ public class ProgressBarObservableValue extends AbstractObservableValue {
                 //Assert.isTrue(false, "invalid attribute name:" + attribute); //$NON-NLS-1$
                 return;
             }
-            fireValueChange(Diffs.createValueDiff(new Integer(oldValue),
-                    new Integer(newValue)));
+            fireValueChange(Diffs.createValueDiff(oldValue,
+                    newValue));
         } finally {
             updating = false;
         }
@@ -125,7 +125,7 @@ public class ProgressBarObservableValue extends AbstractObservableValue {
         } else if (attribute==ATTR_MAX) {
             value = _progress.getMaximum();
         }
-        return new Integer(value);
+        return value;
     }
 
     @Override
