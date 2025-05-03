@@ -413,6 +413,8 @@ public class Application {
 		aboutDialog = new AboutDialog(shlPtlTrader, SWT.PRIMARY_MODAL);
 		shlPtlTrader.open();
 		shlPtlTrader.layout();
+		shlPtlTrader.setSize(1800,1200);
+
 		while (!shlPtlTrader.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
@@ -496,19 +498,19 @@ public class Application {
 		tablePortfolios.setHeaderVisible(true);
 		
 		TableColumn tblclmnPortfsName = new TableColumn(tablePortfolios, SWT.NONE);
-		tblclmnPortfsName.setWidth(180);
+		tblclmnPortfsName.setWidth(280);
 		tblclmnPortfsName.setText("Portfolio");
 		
 		TableColumn tblclmnPortfsPairs = new TableColumn(tablePortfolios, SWT.RIGHT);
-		tblclmnPortfsPairs.setWidth(60);
+		tblclmnPortfsPairs.setWidth(160);
 		tblclmnPortfsPairs.setText("Pairs");
 		
 		TableColumn tblclmnPortfsPl = new TableColumn(tablePortfolios, SWT.RIGHT);
-		tblclmnPortfsPl.setWidth(80);
+		tblclmnPortfsPl.setWidth(180);
 		tblclmnPortfsPl.setText("P/L");
 		
 		TableColumn tblclmnPortfsAccount = new TableColumn(tablePortfolios, SWT.NONE);
-		tblclmnPortfsAccount.setWidth(100);
+		tblclmnPortfsAccount.setWidth(200);
 		tblclmnPortfsAccount.setText("Account");
 		
 		TabFolder tabFolderPortfolio = new TabFolder(sashForm2, SWT.NONE);
@@ -533,51 +535,51 @@ public class Application {
 		tablePortfPairs.setHeaderVisible(true);
 		
 		TableColumn tblclmnPairStock1 = new TableColumn(tablePortfPairs, SWT.NONE);
-		tblclmnPairStock1.setWidth(100);
+		tblclmnPairStock1.setWidth(200);
 		tblclmnPairStock1.setText("Stock 1");
 		
 		TableColumn tblclmnPairStock2 = new TableColumn(tablePortfPairs, SWT.NONE);
-		tblclmnPairStock2.setWidth(100);
+		tblclmnPairStock2.setWidth(200);
 		tblclmnPairStock2.setText("Stock 2");
 		
 		TableColumn tblclmnPairModel = new TableColumn(tablePortfPairs, SWT.NONE);
-		tblclmnPairModel.setWidth(60);
+		tblclmnPairModel.setWidth(160);
 		tblclmnPairModel.setText("Model");
 		
 		TableColumn tblclmnPairStatus = new TableColumn(tablePortfPairs, SWT.NONE);
-		tblclmnPairStatus.setWidth(100);
+		tblclmnPairStatus.setWidth(200);
 		tblclmnPairStatus.setText("Status");
 		
 		TableColumn tblclmnCoreStatus = new TableColumn(tablePortfPairs, SWT.NONE);
-		tblclmnCoreStatus.setWidth(170);
+		tblclmnCoreStatus.setWidth(270);
 		tblclmnCoreStatus.setText("Engine Status");
 		
 		TableColumn tblclmnPairPL = new TableColumn(tablePortfPairs, SWT.RIGHT);
-		tblclmnPairPL.setWidth(80);
+		tblclmnPairPL.setWidth(180);
 		tblclmnPairPL.setText("P/L");
 		
 		TableColumn tblclmnPairZScoreBid = new TableColumn(tablePortfPairs, SWT.RIGHT);
-		tblclmnPairZScoreBid.setWidth(90);
+		tblclmnPairZScoreBid.setWidth(190);
 		tblclmnPairZScoreBid.setText("Z-Score Bid");
 
 		TableColumn tblclmnPairZScoreAsk = new TableColumn(tablePortfPairs, SWT.RIGHT);
-		tblclmnPairZScoreAsk.setWidth(90);
+		tblclmnPairZScoreAsk.setWidth(190);
 		tblclmnPairZScoreAsk.setText("Z-Score Ask");
 		
 		TableColumn tblclmnPairRsi = new TableColumn(tablePortfPairs, SWT.RIGHT);
-		tblclmnPairRsi.setWidth(60);
+		tblclmnPairRsi.setWidth(160);
 		tblclmnPairRsi.setText("RSI");
 		
 		TableColumn tblclmnPairProfitPotential = new TableColumn(tablePortfPairs, SWT.RIGHT);
-		tblclmnPairProfitPotential.setWidth(80);
+		tblclmnPairProfitPotential.setWidth(180);
 		tblclmnPairProfitPotential.setText("ProfitP");
 		
 		TableColumn tblclmnPairLastOpened = new TableColumn(tablePortfPairs, SWT.NONE);
-		tblclmnPairLastOpened.setWidth(140);
+		tblclmnPairLastOpened.setWidth(240);
 		tblclmnPairLastOpened.setText("Last Opened");
 		
 		TableColumn tblclmnPairDaysRemaining = new TableColumn(tablePortfPairs, SWT.RIGHT);
-		tblclmnPairDaysRemaining.setWidth(70);
+		tblclmnPairDaysRemaining.setWidth(170);
 		tblclmnPairDaysRemaining.setText("Days 2 Go");
 		
 		progressBarPairSlotUsage = new ProgressBar(compositePairList, SWT.VERTICAL);
@@ -588,7 +590,7 @@ public class Application {
 		TabItem tbtmPortfSettings = new TabItem(tabFolderPortfolio, SWT.NONE);
 		tbtmPortfSettings.setToolTipText("Portfolio Settings");
 		tbtmPortfSettings.setText("Settings");
-		
+
 		Composite compositePortfSettings = new Composite(tabFolderPortfolio, SWT.NONE);
 		compositePortfSettings.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_BACKGROUND));
 		tbtmPortfSettings.setControl(compositePortfSettings);
@@ -1580,7 +1582,7 @@ public class Application {
 		compositeMiscSettings.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_BACKGROUND));
 		tbtmMiscSettings.setControl(compositeMiscSettings);
 		compositeMiscSettings.setLayout(new GridLayout(3, false));
-		
+		tabFolderMisc.setSelection(tabFolderMisc.getItemCount()-1);
 		Group grpPairTradingLab = new Group(compositeMiscSettings, SWT.NONE);
 		grpPairTradingLab.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_BACKGROUND));
 		grpPairTradingLab.setLayout(new GridLayout(2, false));
@@ -1793,6 +1795,7 @@ public class Application {
 		mntmAbout.setText("About");
 		m_bindingContext = initDataBindings();
 		finishBindings();
+
 	}
 
 	public Status getmStatus() {
